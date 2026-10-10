@@ -13,8 +13,8 @@ const express = require("express");
  connectDB();
   app.use(express.json());
   app.use(cors({
-  origin :  "http://localhost:5173",
-  // origin: "https://glamkudi.netlify.app",
+  // origin :  "http://localhost:5173",
+  origin: "https://glamkudi.netlify.app",
   
 }));
   //  app.get("/api/product/test",(req, res)=>{
