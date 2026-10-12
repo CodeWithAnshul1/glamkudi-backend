@@ -78,5 +78,24 @@ const fatchproduct =async( req,res)=>{
 
  
 };
+
+const productdetail= async(req ,res)=>{
+  try{
+
+    const {id}=req.params;
+  
+    const product = await Product.findById(id);
+    if(!product) return res.status(404).json({message:"not found"});
+    console.log(product);
+
+   return res.status(200).json({product:product});
+  
+  }catch(err){
+    console.log(err);
+   return  res.status(500).json({message:"internal server error"})
+  }
+
+
+}
 module.exports = {
-    createProduct ,fatchproduct};
+    createProduct ,fatchproduct ,productdetail};

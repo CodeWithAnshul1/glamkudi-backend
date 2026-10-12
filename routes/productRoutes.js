@@ -1,7 +1,7 @@
 const express =require("express");
 const router = express.Router();
 const upload =require("../middleware/upload")
-const {createProduct, fatchproduct} = require("../controllers/productController");
+const {createProduct, fatchproduct , productdetail} = require("../controllers/productController");
 
 router.post("/test",(req, res)=>{
     console.log("hello");
@@ -15,5 +15,6 @@ router.post("/",upload.single("image"), createProduct);
 //   });
 // });
 router.get("/product-fetch",fatchproduct);
+router.get("/detail/:id",productdetail)
 
 module.exports = router;
