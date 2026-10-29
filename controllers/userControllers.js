@@ -99,7 +99,8 @@ const Loggin= async(req ,res)=>{
         res.cookie("accesstoken",accesstoken,{
             httpOnly:true,
             secure:process.env.COOKIE==="production",
-            sameSite:"lax" ,
+            sameSite:"none" ,
+            path: "/",
             maxAge:24 * 60 * 60 *1000
         });
         console.log("loggin success");
