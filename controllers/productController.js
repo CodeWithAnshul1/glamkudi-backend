@@ -1,5 +1,5 @@
-const Product =require("../models/product");
-const cloudinary =require("../config/cloudinary")
+import Product from "../models/product.js";
+import cloudinary from"../config/cloudinary.js";
 
 const createProduct = async (req, res)=>{
 
@@ -97,5 +97,5 @@ const productdetail= async(req ,res)=>{
 
 
 }
-module.exports = {
+export  {
     createProduct ,fatchproduct ,productdetail};

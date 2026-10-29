@@ -1,7 +1,7 @@
-const express =require("express");
+import  express from "express";
 const router = express.Router();
-const upload =require("../middleware/upload")
-const {createProduct, fatchproduct , productdetail} = require("../controllers/productController");
+import upload from "../middleware/upload.js";
+import {createProduct, fatchproduct , productdetail} from "../controllers/productController.js";
 
 router.post("/test",(req, res)=>{
     console.log("hello");
@@ -9,12 +9,7 @@ router.post("/test",(req, res)=>{
 })
 
 router.post("/",upload.single("image"), createProduct);
-// router.get("/product-fetch", (req, res) => {
-//   res.status(200).json({
-//     message: "Fetch route working",
-//   });
-// });
 router.get("/product-fetch",fatchproduct);
 router.get("/detail/:id",productdetail)
 
-module.exports = router;
+export default router;

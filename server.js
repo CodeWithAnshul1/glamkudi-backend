@@ -1,20 +1,24 @@
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 dotenv.config();
-const express = require("express");
- const connectDB = require("./config/db");
- const productRoutes = require("./routes/productRoutes");
- const cors = require("cors")
+import express from "express";
+ import connectDB from "./config/db.js";
+ import productRoutes from "./routes/productRoutes.js";
+ import userRoutes from "./routes/userRoutes.js";
+ import cors from "cors"
+import cookieParser from "cookie-parser";
  const PORT =5000;
- const cloudinary = require("./config/cloudinary");
- const upload =require("./middleware/upload")
+ 
+ 
 
  const app = express();
 
  connectDB();
   app.use(express.json());
+  app.use(cookieParser());
   app.use(cors({
   // origin :  "http://localhost:5173",
   origin: "https://glamkudi.netlify.app",
+  credentials:true
   
 }));
   //  app.get("/api/product/test",(req, res)=>{
@@ -24,6 +28,7 @@ const express = require("express");
   
 
   app.use("/api/products",productRoutes);
+  app.use("/api/users",userRoutes);
 
 
   app.listen(PORT,()=>{
