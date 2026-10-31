@@ -19,7 +19,7 @@ import cookieParser from "cookie-parser";
     origin : [
       "http://localhost:5173",
       "https://glamkudi.in",
-      "https://glamkudi.in"
+      "https://www.glamkudi.in"
     ] ,
   
   // origin: "https://glamkudi.netlify.app",
