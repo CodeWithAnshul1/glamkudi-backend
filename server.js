@@ -16,8 +16,13 @@ import cookieParser from "cookie-parser";
   app.use(express.json());
   app.use(cookieParser());
   app.use(cors({
-  // origin :  "http://localhost:5173",
-  origin: "https://glamkudi.netlify.app",
+    origin : [
+      "http://localhost:5173",
+      "https://glamkudi.in",
+      "https://glamkudi.in"
+    ] ,
+  
+  // origin: "https://glamkudi.netlify.app",
     credentials:true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
