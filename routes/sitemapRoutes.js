@@ -1,6 +1,6 @@
-import express from "express"
-import {generatesitemap} from "../controllers/sitemapController"
+import express from "express";
 const router =express.Router();
+import {generatesitemap} from "../controllers/sitemapController.js"
 
 router.get("/sitemap.xml",generatesitemap);
 

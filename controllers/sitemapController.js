@@ -1,4 +1,4 @@
-import Product from "../models/product";
+import Product from "../models/product.js";
 
 const generatesitemap = async(req , res)=>{
     try{
@@ -30,4 +30,4 @@ const generatesitemap = async(req , res)=>{
 
     }
 }
-export default generatesitemap;
+export {generatesitemap};

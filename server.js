@@ -22,21 +22,19 @@ const PORT =5000;
       "https://glamkudi.in",
       "https://www.glamkudi.in"
     ] ,
-  
-  // origin: "https://glamkudi.netlify.app",
     credentials:true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   
 }));
-  //  app.get("/api/product/test",(req, res)=>{
-  //   console.log("ok");
-  //  })
+  
 
   
 
   app.use("/api/products",productRoutes);
   app.use("/api/users",userRoutes);
+
+  //sitemap 
 
   app.use("/",sitemapRoutes);
 
