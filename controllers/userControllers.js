@@ -100,7 +100,7 @@ const Loggin= async(req ,res)=>{
             httpOnly:true,
             secure:process.env.COOKIE==="production",
             sameSite:"lax" ,
-            domain:'.glamkudi.in',
+            // domain:'.glamkudi.in',
             // path: "/",
             maxAge:24 * 60 * 60 *1000
         });

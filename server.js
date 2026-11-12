@@ -6,7 +6,8 @@ import express from "express";
  import userRoutes from "./routes/userRoutes.js";
  import cors from "cors"
 import cookieParser from "cookie-parser";
- const PORT =5000;
+import sitemapRoutes from "./routes/sitemapRoutes.js"
+const PORT =5000;
  
  
 
@@ -36,6 +37,8 @@ import cookieParser from "cookie-parser";
 
   app.use("/api/products",productRoutes);
   app.use("/api/users",userRoutes);
+
+  app.use("/",sitemapRoutes);
 
 
   app.listen(PORT,()=>{
